@@ -4,7 +4,8 @@ Class {
 	#instVars : [
 		'userName',
 		'email',
-		'password'
+		'password',
+		'goals'
 	],
 	#category : #IDW
 }
@@ -17,6 +18,22 @@ IDWUser >> email [
 { #category : #accessing }
 IDWUser >> email: anObject [
 	email := anObject
+]
+
+{ #category : #accessing }
+IDWUser >> goals [
+	^ goals
+]
+
+{ #category : #accessing }
+IDWUser >> goals: anObject [
+	goals := anObject
+]
+
+{ #category : #initialization }
+IDWUser >> initialize [
+	super initialize .
+	goals := OrderedCollection new .
 ]
 
 { #category : #accessing }

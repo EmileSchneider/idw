@@ -42,3 +42,8 @@ IDWSession >> registerUser: userName password: password email: email [
 	users add: newUser .
 	
 ]
+
+{ #category : #accessing }
+IDWSession >> user [ 	
+	^ user
+]

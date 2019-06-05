@@ -6,7 +6,8 @@ Class {
 	#superclass : #WAComponent,
 	#instVars : [
 		'controllBar',
-		'auth'
+		'auth',
+		'goalSetter'
 	],
 	#category : #IDW
 }
@@ -22,6 +23,7 @@ IDWRoot >> children [
 	c := OrderedCollection new .
 	c add: controllBar .
 	c add: auth .
+	c add: goalSetter .
 	^ c 
 ]
 
@@ -30,6 +32,7 @@ IDWRoot >> initialize [
 	super initialize.
 	controllBar := IDWControllBar new.
 	auth := IDWAuthentication new .
+	goalSetter := IDWGoalSetter new .
 	
 ]
 
@@ -38,5 +41,6 @@ IDWRoot >> renderContentOn: html [
 	html render: controllBar .
 	html heading: 'IDW'.
 	html render: auth .
+	html render: goalSetter .
 	
 ]
