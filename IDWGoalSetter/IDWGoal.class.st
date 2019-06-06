@@ -11,7 +11,7 @@ Class {
 		'failed',
 		'dueDate'
 	],
-	#category : #IDW
+	#category : #IDWGoalSetter
 }
 
 { #category : #accessing }

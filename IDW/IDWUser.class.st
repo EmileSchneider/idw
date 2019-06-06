@@ -5,7 +5,8 @@ Class {
 		'userName',
 		'email',
 		'password',
-		'goals'
+		'goals',
+		'messages'
 	],
 	#category : #IDW
 }

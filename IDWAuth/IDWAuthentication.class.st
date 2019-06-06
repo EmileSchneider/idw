@@ -7,7 +7,7 @@ Class {
 		'password',
 		'email'
 	],
-	#category : #IDW
+	#category : #IDWAuth
 }
 
 { #category : #rendering }
@@ -51,8 +51,7 @@ IDWAuthentication >> renderLoginForm: html [
          value:  password;
          callback: [ :value |  password := value ].
       html break.
-      html submitButton ].
-		html anchor callback: [ self session login: email password: password ]; with: 'finish Login'
+      html submitButton callback: [ self session login: email password: password ]; with: 'finish Login']
 ]
 
 { #category : #rendering }
@@ -73,7 +72,6 @@ IDWAuthentication >> renderSignUpForm: html [
          value:  password;
          callback: [ :value |  password := value ].
       html break.
-      html submitButton ].
-		html anchor callback: [ 
-			self session registerUser: userName password: password email: email ]; with: 'finish signup'
+      html submitButton callback: [ 
+			self session registerUser: userName password: password email: email ]; with: 'finish signup']
 ]

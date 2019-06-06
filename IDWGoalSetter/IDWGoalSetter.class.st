@@ -6,7 +6,7 @@ Class {
 		'goal',
 		'newG'
 	],
-	#category : #IDW
+	#category : #IDWGoalSetter
 }
 
 { #category : #initialization }
@@ -28,11 +28,11 @@ IDWGoalSetter >> renderContentOn: html [
 	html heading level2 class: 'appHeading'; with: 'Goal Setter' . 
 	self session isLoggedIn ifTrue: [ 
 		html strong: self session user userName . html break.
-		self renderGoalsList: html. ]. 
+		self renderGoalsList: html. 
 	html form: [ 
 		html anchor callback: [goal := self getNewGoal . newG := true ]; with: 'newGoal' ] .
 		newG ifTrue: [ 
-			self renderNewGoalForm: html ]
+			self renderNewGoalForm: html ] ] 
 ]
 
 { #category : #rendering }
