@@ -7,7 +7,9 @@ Class {
 	#instVars : [
 		'controllBar',
 		'auth',
-		'goalSetter'
+		'goalSetter',
+		'collaborationNetwork',
+		'studyGroup'
 	],
 	#category : #IDW
 }
@@ -24,6 +26,7 @@ IDWRoot >> children [
 	c add: controllBar .
 	c add: auth .
 	c add: goalSetter .
+	c add: collaborationNetwork .
 	^ c 
 ]
 
@@ -32,7 +35,9 @@ IDWRoot >> initialize [
 	super initialize.
 	controllBar := IDWControllBar new.
 	auth := IDWAuthentication new .
-	goalSetter := IDWGoalSetter new .
+	goalSetter := IDWGoalsetter new .
+	collaborationNetwork := IDWCollaborationNetwork new .
+	studyGroup := IDWStudyGroups new .
 	
 ]
 
@@ -41,6 +46,5 @@ IDWRoot >> renderContentOn: html [
 	html render: controllBar .
 	html heading: 'IDW'.
 	html render: auth .
-	html render: goalSetter .
-	
+	html render: studyGroup .
 ]

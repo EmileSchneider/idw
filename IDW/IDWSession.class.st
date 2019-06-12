@@ -9,6 +9,11 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
+IDWSession >> allUsers [
+	^ users.
+]
+
+{ #category : #'as yet unclassified' }
 IDWSession >> initialize [ 
 	super initialize .
 	users := OrderedCollection new .	
